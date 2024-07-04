@@ -6,7 +6,7 @@ import {
   ReactPortal,
   AwaitedReactNode,
 } from "react";
-import Results from "./components/Results";
+import Results from "../components/Results";
 
 const apiKey = process.env.API_KEY;
 const resultanat = [
@@ -43,19 +43,7 @@ export default async function Home({
   return (
     <>
       <div className="flex items-center justify-center ">
-        <div>
-          {results.map(
-            (result: {
-              id: string;
-              overview: string;
-              original_title: string;
-            }) => (
-              <div key={result.id}>
-                <h2>{result.overview}</h2>
-              </div>
-            )
-          )}
-        </div>
+        <Results result={results} />
       </div>
     </>
   );
